@@ -1,16 +1,15 @@
 const fs = require("fs");
 const flatted = require("flatted");
-const passengerDatabase = require("../database/passenger-database");
 
 class BaseDataBase {
   constructor(model) {
     this.model = model;
-    this.filename = model.name;
+    this.filename = model.name.tolowerCase;
   }
 
   save(objects) {
     fs.writeFileSync(
-      `./${this.filename}.json`,
+      `${this.filename}.json`,
       flatted.stringify(objects, null, 2)
     );
   }
@@ -24,7 +23,7 @@ class BaseDataBase {
 
   insert(object) {
     const objects = load();
-    save(objects.concat(object));
+    this.save(objects.concat(object));
   }
 
   remove(index) {
@@ -39,6 +38,10 @@ class BaseDataBase {
 
     const index = objects.findIndex((o) => o.id == object.id);
 
+    if (index == -1)
+      throw new Error()(
+        `Cannot find ${this.model.name} instance with id ${object.id}`
+      );
     objects.splice(index, 1, object);
     this.save(objects);
   }
