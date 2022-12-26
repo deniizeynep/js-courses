@@ -1,6 +1,6 @@
 const fs = require("fs");
 const flatted = require("flatted");
-const passengerDatabase = require("../passenger-database");
+const passengerDatabase = require("../database/passenger-database");
 
 class BaseDataBase {
   constructor(model) {
