@@ -7,10 +7,11 @@ class BaseDataBase {
     this.filename = model.name.tolowerCase;
   }
 
-  save(objects) {
+  save(objects, callback = () => {}) {
     fs.writeFileSync(
-      `${this.filename}.json`,
-      flatted.stringify(objects, null, 2)
+      `${__dirname}/${this.filename}.json`,
+      flatted.stringify(objects, null, 2),
+      callback
     );
   }
 
