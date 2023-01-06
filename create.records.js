@@ -15,13 +15,6 @@ ali.book(stefan, "Mitte", "Kreuzberg");
 ali.book(stefan, "Kreuzberg", "SXF");
 mert.book(stefan, "Mitte", "Kreuzberg");
 
-// console.log("writedbs");
-// passengerDataBase.save([ali, mert], () => {
-//   console.log("wrote passenger");
-//   driverDatabase.save([stefan], () => {
-//     console.log("done");
-//   });
-// });
 async function main() {
   try {
     await passengerDataBase.save;
