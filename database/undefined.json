@@ -1,52 +1,6 @@
 [[
-  "1",
-  "2"
+  "1"
 ],{
-  "id": "3",
-  "name": "4",
-  "bookings": "5"
-},{
-  "id": "6",
-  "name": "7",
-  "bookings": "8"
-},"Ali","Kreuzberg",[
-  "9",
-  "10",
-  "11",
-  "12"
-],"Mert","Mitte",[
-  "13"
-],{
-  "driver": "14",
-  "passenger": "1",
-  "origin": "4",
-  "destination": "15",
-  "state": "16"
-},{
-  "driver": "14",
-  "passenger": "1",
-  "origin": "15",
-  "destination": "7",
-  "state": "16"
-},{
-  "driver": "14",
-  "passenger": "1",
-  "origin": "7",
-  "destination": "4",
-  "state": "16"
-},{
-  "driver": "14",
-  "passenger": "1",
-  "origin": "4",
-  "destination": "17",
-  "state": "16"
-},{
-  "driver": "14",
-  "passenger": "2",
-  "origin": "7",
-  "destination": "4",
-  "state": "16"
-},{
-  "name": "18",
-  "location": "19"
-},"Neukolln","Finished","SXF","Stefan","Treptower Park"]
+  "name": "2",
+  "location": "3"
+},"Stefan","Treptower Park"]

@@ -15,10 +15,27 @@ ali.book(stefan, "Mitte", "Kreuzberg");
 ali.book(stefan, "Kreuzberg", "SXF");
 mert.book(stefan, "Mitte", "Kreuzberg");
 
-console.log("writedbs");
-passengerDataBase.save([ali, mert], () => {
-  console.log("wrote passenger");
-  driverDatabase.save([stefan], () => {
-    console.log("done");
-  });
-});
+// console.log("writedbs");
+// passengerDataBase.save([ali, mert], () => {
+//   console.log("wrote passenger");
+//   driverDatabase.save([stefan], () => {
+//     console.log("done");
+//   });
+// });
+async function main() {
+  try {
+    await passengerDataBase.save;
+    [ali, mert];
+    await driverDataBase.save([stefan]);
+
+    const betul = Passenger.create({ name: "Betul", location: "Tegel" });
+
+    await passengerDataBase.insert(betul);
+    const passengers = await passengerDataBase.load();
+    passengers.forEach(printBookingHistory);
+  } catch (e) {
+    return console.log(e);
+  }
+}
+
+main();
