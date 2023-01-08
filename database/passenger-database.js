@@ -1,12 +1,12 @@
-const BaseDataBase = require("./base-database");
+const BaseDatabase = require("./base-database");
 const Passenger = require("../model/passenger");
 
-class PassengerDataBase extends BaseDataBase {
-  findByName(name) {
-    const objects = this.load();
+class PassengerDatabase extends BaseDatabase {
+  async findByName(name) {
+    const objects = await this.load();
 
     return objects.find((o) => o.name == name);
   }
 }
 
-module.exports = new PassengerDataBase(Passenger);
+module.exports = new PassengerDatabase(Passenger);

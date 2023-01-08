@@ -1,12 +1,16 @@
-const { passengerDataBase, driverDataBase } = require("./database");
-const printBookingHistory = require("./lib/print-booking-history");
+const express = require("express");
+const bodyParser = require("body-parser");
+const passengersRouter = require("./routes/passengers");
+const indexRouter = require("./routes/index");
 
-const stefan = driverDataBase.findBy("name", "Stefan");
-const ali = passengerDataBase.findByName("Ali");
+const app = express();
+app.use(bodyParser.json());
 
-ali.book(stefan, "Kreuzberg", "Wannsee");
-passengerDataBase.update(ali);
+app.set("view engine", "pug");
 
-printBookingHistory(ali);
+app.use("/passengers", passengersRouter);
+app.use("/", indexRouter);
 
-console.log(passengerDataBase.findByName("location", "Mitte"));
+app.listen(3000, () => {
+  console.log("started listening on 3000");
+});
